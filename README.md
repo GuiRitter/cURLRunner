@@ -17,6 +17,7 @@ import org.springframework.core.env.StandardEnvironment;
 import org.springframework.core.task.AsyncTaskExecutor;
 
 @SpringBootApplication
+@ComponentScan("io.github.guiritter.curl_runner")
 public class cURLExample implements ApplicationRunner {
 
 	@Autowired
@@ -37,7 +38,9 @@ public class cURLExample implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		asyncExecutor.submit(applicationContext.getBean(cURL.class).configure("C:\\...", "http://...", false)).get();
+		asyncExecutor.submit(applicationContext.getBean(cURL.class).configure("C:\\...\\file.extension", "http://...", false)).get();
+
+		System.exit(0);
 	}
 }
 ```
