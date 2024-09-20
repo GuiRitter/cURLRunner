@@ -16,8 +16,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.core.task.AsyncTaskExecutor;
 
+import io.github.guiritter.curl_runner.cURL;
+
 @SpringBootApplication
-@ComponentScan("io.github.guiritter.curl_runner")
+@Import(io.github.guiritter.curl_runner.cURL.class)
 public class cURLExample implements ApplicationRunner {
 
 	@Autowired
